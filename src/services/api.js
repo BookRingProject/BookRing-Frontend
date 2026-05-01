@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { STORAGE_KEYS } from '../utils/constants';
 
-const API_URL = 'https://bookring.onrender.com/api';
+// Use environment variable for API URL, fallback to Render URL for production
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://bookring.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
