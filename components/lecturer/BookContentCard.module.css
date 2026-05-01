@@ -1,0 +1,370 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--green-primary);
+  stroke-width: 1.5;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  min-width: 200px;
+  justify-content: flex-end;
+}
+
+.downloadBtn {
+  padding: 8px 16px;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.downloadBtn svg,
+.deleteBtn svg,
+.disabledBtn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.downloadBtn:hover {
+  background-color: var(--green-dark);
+}
+
+.deleteBtn {
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.deleteBtn:hover {
+  background-color: #c82333;
+}
+
+.disabledBtn {
+  padding: 8px 16px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .icon {
+    font-size: 48px;
+    min-width: auto;
+  }
+
+  .icon svg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  .meta {
+    font-size: 12px;
+  }
+  
+  .date {
+    font-size: 11px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    min-width: auto;
+  }
+  
+  .downloadBtn,
+  .deleteBtn,
+  .disabledBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  .downloadBtn svg,
+  .deleteBtn svg,
+  .disabledBtn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+  
+  .downloadBtn,
+  .deleteBtn,
+  .disabledBtn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .downloadBtn svg,
+  .deleteBtn svg,
+  .disabledBtn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+}
+
+/* Summary preview styles */
+.summaryPreview {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.summaryText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.seeMoreBtn {
+  background: none;
+  border: none;
+  color: var(--green-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.seeMoreBtn:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+.noSummary {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Mobile adjustments for summary */
+@media (max-width: 768px) {
+  .summaryText {
+    font-size: 13px;
+  }
+  
+  .seeMoreBtn {
+    font-size: 12px;
+  }
+}
+
+/* Audio Player Styles */
+.audioPlayerContainer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.audioControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.playPauseBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.playPauseBtn:hover {
+  background-color: var(--green-dark);
+  transform: scale(1.05);
+}
+
+.progressContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.currentTime,
+.duration {
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+/* Progress bar wrapper and filled (for clickable progress bar) */
+.progressBarWrapper {
+  flex: 1;
+  height: 4px;
+  background-color: var(--bg-tertiary);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progressFilled {
+  height: 100%;
+  background-color: var(--green-primary);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Keep seekBar for backward compatibility */
+.seekBar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--bg-tertiary);
+  cursor: pointer;
+}
+
+.seekBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--green-primary);
+  cursor: pointer;
+}
+
+.noAudio {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Mobile adjustments for audio player */
+@media (max-width: 768px) {
+  .audioControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .progressContainer {
+    width: 100%;
+  }
+  
+  .playPauseBtn {
+    align-self: center;
+  }
+}

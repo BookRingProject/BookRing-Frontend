@@ -1,0 +1,12 @@
+.container {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.canvas {
+  width: 100%;
+  height: auto;
+  background-color: var(--bg-secondary);
+}

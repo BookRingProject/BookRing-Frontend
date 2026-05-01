@@ -1,0 +1,43 @@
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 20px;
+}
+
+.errorContent {
+  text-align: center;
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+.errorTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #dc3545;
+  margin-bottom: 12px;
+}
+
+.errorMessage {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.retryBtn {
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.retryBtn:hover {
+  background-color: var(--green-dark);
+}

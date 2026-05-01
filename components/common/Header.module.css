@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.themeToggle {
+  flex: 1;
+}
+
+.themeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.themeBtn:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--green-primary);
+  text-decoration: none;
+}
+
+.userInfo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  color: var(--text-primary);
+}
+
+/* Sun and logout icons become white in dark mode */
+[data-theme="dark"] .themeBtn .icon {
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+[data-theme="dark"] .logoutBtn .icon {
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+  
+  .logoText {
+    font-size: 20px;
+  }
+  
+  .userName {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: #ffc107;
+  fill: currentColor;
+  stroke: none;
+}

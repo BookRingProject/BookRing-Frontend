@@ -1,0 +1,66 @@
+.container {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.barItem {
+  width: 100%;
+}
+
+.bookInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.rank {
+  font-weight: bold;
+  color: var(--green-primary);
+  width: 30px;
+}
+
+.bookTitle {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.saveCount {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.barWrapper {
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bar {
+  background-color: var(--green-primary);
+  height: 8px;
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+}

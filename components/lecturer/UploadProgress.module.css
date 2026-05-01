@@ -1,0 +1,89 @@
+.container {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.progressBar {
+  background-color: var(--bg-tertiary);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.progressFill {
+  background-color: var(--green-primary);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.stepCircle.active {
+  background-color: var(--green-primary);
+  color: white;
+}
+
+.stepLabel {
+  font-size: 12px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.stepLabel.activeLabel {
+  color: var(--green-primary);
+  font-weight: 600;
+}
+
+.stepLine {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-tertiary);
+  z-index: 1;
+}
+
+.successMessage {
+  text-align: center;
+  color: #4CAF50;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #f44336;
+  font-weight: 600;
+  margin-top: 16px;
+}

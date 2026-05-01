@@ -1,0 +1,43 @@
+.container {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.summaryPreview {
+  background-color: var(--bg-tertiary);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.summaryPreview h4 {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.summaryPreview p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.audioPlayer {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.noAudio {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px;
+}

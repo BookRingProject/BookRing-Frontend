@@ -1,0 +1,100 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--grey-inactive);
+  font-size: 10px;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.footerItem.active {
+  color: var(--green-primary);
+}
+
+.footerItem span {
+  font-size: 10px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  color: currentColor;
+}
+
+/* Lecturer center plus button */
+.centerBtn {
+  position: relative;
+}
+
+.plusCircle {
+  width: 56px;
+  height: 56px;
+  background-color: var(--green-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.2s;
+}
+
+.plusCircle:hover {
+  transform: scale(1.05);
+}
+
+.plusIcon {
+  width: 32px;
+  height: 32px;
+  stroke: white;
+  stroke-width: 2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 6px 12px;
+  }
+  
+  .plusCircle {
+    width: 48px;
+    height: 48px;
+    margin-top: -16px;
+  }
+  
+  .plusIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}

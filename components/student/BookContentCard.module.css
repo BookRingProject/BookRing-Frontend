@@ -1,0 +1,262 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.link {
+  flex-shrink: 0;
+}
+
+.cover {
+  width: 80px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--bg-tertiary);
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleLink {
+  text-decoration: none;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.title:hover {
+  color: var(--green-primary);
+}
+
+.meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.downloadBtn {
+  padding: 8px 16px;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.downloadBtn svg,
+.deleteBtn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.downloadBtn:hover {
+  background-color: var(--green-dark);
+}
+
+.deleteBtn {
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.deleteBtn:hover {
+  background-color: #c82333;
+}
+
+/* Audio Player Styles */
+.audioPlayerContainer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.audioControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.playPauseBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.playPauseBtn:hover {
+  background-color: var(--green-dark);
+  transform: scale(1.05);
+}
+
+.progressContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.currentTime,
+.duration {
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+.progressBarWrapper {
+  flex: 1;
+  height: 4px;
+  background-color: var(--bg-tertiary);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progressFilled {
+  height: 100%;
+  background-color: var(--green-primary);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Summary preview */
+.summaryPreview {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.summaryText {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .cover {
+    width: 100px;
+    height: 130px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .downloadBtn,
+  .deleteBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .audioControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .progressContainer {
+    width: 100%;
+  }
+  
+  .playPauseBtn {
+    align-self: center;
+  }
+}
+
+
+
+/* Add to existing CSS */
+.summaryPreview {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.summaryText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.seeMoreBtn {
+  background: none;
+  border: none;
+  color: var(--green-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.seeMoreBtn:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
