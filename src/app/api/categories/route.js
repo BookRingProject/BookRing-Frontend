@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { CATEGORIES } from '@/utils/constants';
+import { CATEGORIES } from '../../../utils/constants';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
