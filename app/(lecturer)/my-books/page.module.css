@@ -1,0 +1,214 @@
+.container {
+  padding: 24px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.tab svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.tab:hover {
+  color: var(--green-primary);
+}
+
+.activeTab {
+  color: var(--green-primary);
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--green-primary);
+}
+
+.count {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.activeTab .count {
+  background-color: var(--green-primary);
+  color: white;
+}
+
+.contentArea {
+  min-height: 400px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.emptyState p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Tab label - visible on desktop, hidden on mobile */
+.tabLabel {
+  display: inline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px 12px;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .header button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tabs {
+    gap: 4px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .tab {
+    padding: 10px 16px;
+  }
+  
+  .tab svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Hide text labels on mobile - icons only */
+  .tabLabel {
+    display: none;
+  }
+  
+  .count {
+    padding: 1px 6px;
+    font-size: 10px;
+  }
+  
+  .contentArea {
+    min-height: 300px;
+  }
+  
+  .emptyState {
+    padding: 40px 16px;
+  }
+  
+  .emptyState p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px 8px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .tab {
+    padding: 8px 12px;
+  }
+  
+  .tab svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--green-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--green-dark);
+  transform: translateX(-4px);
+}
+
+.backBtn svg {
+  stroke: currentColor;
+}

@@ -1,0 +1,29 @@
+.dashboard {
+  padding: 24px 0;
+}
+
+.welcome {
+  margin-bottom: 32px;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.chartsRow {
+  margin-bottom: 24px;
+}
+
+.performanceCard {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 8px;
+}

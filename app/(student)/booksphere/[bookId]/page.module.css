@@ -1,0 +1,42 @@
+.container {
+  padding: 20px 0;
+}
+
+.notFound {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.notFound h2 {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.notFound p {
+  color: var(--text-muted);
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--green-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--green-dark);
+  transform: translateX(-4px);
+}
+
+.backBtn svg {
+  stroke: currentColor;
+}

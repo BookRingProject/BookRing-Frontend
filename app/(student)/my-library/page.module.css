@@ -1,0 +1,162 @@
+.container {
+  padding: 24px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.tab:hover {
+  color: var(--green-primary);
+}
+
+.activeTab {
+  color: var(--green-primary);
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--green-primary);
+}
+
+.count {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.activeTab .count {
+  background-color: var(--green-primary);
+  color: white;
+}
+
+.contentArea {
+  min-height: 400px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.emptyState h2 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.emptyState p {
+  margin-bottom: 20px;
+}
+
+/* Tab label visibility */
+.tabLabel {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .tabs {
+    gap: 4px;
+    justify-content: center;
+  }
+  
+  .tab {
+    padding: 10px 16px;
+  }
+  
+  .tab svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .tabLabel {
+    display: none;
+  }
+}
+
+
+
+
+.emptyIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.emptyIcon svg {
+  width: 64px;
+  height: 64px;
+  stroke: var(--green-primary);
+  stroke-width: 1.5;
+}

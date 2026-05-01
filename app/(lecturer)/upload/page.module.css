@@ -1,0 +1,237 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.form {
+  background-color: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.inputGroup {
+  margin-bottom: 28px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Modern Drop Zone */
+.dropZone {
+  border: 2px dashed var(--border-color);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.dropZone:hover {
+  border-color: var(--green-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.dropZone.dragging {
+  border-color: var(--green-primary);
+  background-color: rgba(76, 175, 80, 0.05);
+  transform: scale(0.98);
+}
+
+.dropZone.hasFile {
+  border-color: var(--green-primary);
+  border-style: solid;
+  background-color: var(--bg-tertiary);
+  padding: 20px 24px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadPrompt {
+  pointer-events: none;
+}
+
+.uploadIcon {
+  margin-bottom: 16px;
+  color: var(--green-primary);
+}
+
+.uploadIcon svg {
+  stroke: currentColor;
+}
+
+.uploadText {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.uploadSubtext {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.fileHint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* File Preview */
+.filePreview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.fileIcon {
+  flex-shrink: 0;
+  color: var(--green-primary);
+}
+
+.fileIcon svg {
+  stroke: currentColor;
+}
+
+.fileInfo {
+  flex: 1;
+  text-align: left;
+}
+
+.fileName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.fileSize {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.removeFileBtn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--bg-tertiary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.removeFileBtn:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.removeFileBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.removeFileBtn svg {
+  stroke: currentColor;
+}
+
+.submitBtn {
+  margin-top: 8px;
+  padding: 14px !important;
+  font-size: 16px !important;
+}
+
+.progressSection {
+  margin-top: 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+  
+  .form {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .dropZone {
+    padding: 30px 20px;
+  }
+  
+  .uploadText {
+    font-size: 14px;
+  }
+  
+  .filePreview {
+    gap: 12px;
+  }
+  
+  .fileName {
+    font-size: 13px;
+  }
+}
