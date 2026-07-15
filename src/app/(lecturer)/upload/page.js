@@ -19,20 +19,27 @@ export default function UploadPage() {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
 
-const handleFileChange = (file) => {
-  const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp', 'image/bmp', 'image/gif'];
-  
-  if (file && allowedTypes.includes(file.type)) {
-    setSelectedFile(file);
-    if (!title) {
-      // Remove extension from filename
-      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
-      setTitle(nameWithoutExt);
+  // ✅ Updated to accept both PDFs and images
+  const handleFileChange = (file) => {
+    const allowedTypes = [
+      'application/pdf',
+      'image/jpeg',
+      'image/png',
+      'image/webp',
+      'image/bmp',
+      'image/gif'
+    ];
+    
+    if (file && allowedTypes.includes(file.type)) {
+      setSelectedFile(file);
+      if (!title) {
+        const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
+        setTitle(nameWithoutExt);
+      }
+    } else if (file) {
+      alert('Please select a valid PDF or image file (JPEG, PNG, WebP, BMP, GIF)');
     }
-  } else if (file) {
-    alert('Please select a valid PDF or image file (JPEG, PNG, WebP, BMP, GIF)');
-  }
-};
+  };
 
   const onFileSelect = (e) => {
     handleFileChange(e.target.files[0]);
@@ -83,7 +90,7 @@ const handleFileChange = (file) => {
     e.preventDefault();
     
     if (!selectedFile) {
-      alert('Please select a PDF file');
+      alert('Please select a PDF or image file');
       return;
     }
 
@@ -92,6 +99,7 @@ const handleFileChange = (file) => {
     setUploadStatus(null);
 
     const formData = new FormData();
+    // ✅ FIXED: Changed from 'pdf' to 'file'
     formData.append('file', selectedFile);
     formData.append('title', title);
 
@@ -104,7 +112,7 @@ const handleFileChange = (file) => {
 
       setUploadStatus({
         status: 'success',
-        message: 'Book uploaded successfully! Redirecting...'
+        message: 'File uploaded successfully! Redirecting...'
       });
 
       setTimeout(() => {
@@ -134,7 +142,7 @@ const handleFileChange = (file) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>Upload New Book</h1>
-        <p className={styles.subtitle}>Upload a PDF or an Image and let AI do the rest</p>
+        <p className={styles.subtitle}>Upload a PDF or image and let AI do the rest</p>
       </div>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -181,9 +189,9 @@ const handleFileChange = (file) => {
                     <path d="M4 16V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 </div>
-                <p className={styles.uploadText}>Drag & drop your PDF here</p>
+                <p className={styles.uploadText}>Drag & drop your file here</p>
                 <p className={styles.uploadSubtext}>or click to browse</p>
-                <p className={styles.fileHint}>Supported format: PDF & Images (Max 50MB)</p>
+                <p className={styles.fileHint}>Supported formats: PDF & Images (Max 50MB)</p>
               </div>
             ) : (
               <div className={styles.filePreview}>
