@@ -19,16 +19,20 @@ export default function UploadPage() {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
 
-  const handleFileChange = (file) => {
-    if (file && file.type === 'application/pdf') {
-      setSelectedFile(file);
-      if (!title) {
-        setTitle(file.name.replace('.pdf', ''));
-      }
-    } else if (file) {
-      alert('Please select a valid PDF file');
+const handleFileChange = (file) => {
+  const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp', 'image/bmp', 'image/gif'];
+  
+  if (file && allowedTypes.includes(file.type)) {
+    setSelectedFile(file);
+    if (!title) {
+      // Remove extension from filename
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, '');
+      setTitle(nameWithoutExt);
     }
-  };
+  } else if (file) {
+    alert('Please select a valid PDF or image file (JPEG, PNG, WebP, BMP, GIF)');
+  }
+};
 
   const onFileSelect = (e) => {
     handleFileChange(e.target.files[0]);
@@ -88,7 +92,7 @@ export default function UploadPage() {
     setUploadStatus(null);
 
     const formData = new FormData();
-    formData.append('pdf', selectedFile);
+    formData.append('file', selectedFile);
     formData.append('title', title);
 
     try {
@@ -130,7 +134,7 @@ export default function UploadPage() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>Upload New Book</h1>
-        <p className={styles.subtitle}>Upload a PDF and let AI do the rest</p>
+        <p className={styles.subtitle}>Upload a PDF or an Image and let AI do the rest</p>
       </div>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -152,7 +156,7 @@ export default function UploadPage() {
 
         {/* Modern File Upload Area */}
         <div className={styles.inputGroup}>
-          <label className={styles.label}>PDF File</label>
+          <label className={styles.label}>File</label>
           <div
             className={`${styles.dropZone} ${isDragging ? styles.dragging : ''} ${selectedFile ? styles.hasFile : ''}`}
             onDragOver={onDragOver}
@@ -163,7 +167,7 @@ export default function UploadPage() {
             <input
               ref={fileInputRef}
               type="file"
-              accept=".pdf"
+              accept=".pdf,.jpg,.jpeg,.png,.webp,.bmp,.gif"
               onChange={onFileSelect}
               className={styles.fileInput}
               disabled={isProcessing}
@@ -179,7 +183,7 @@ export default function UploadPage() {
                 </div>
                 <p className={styles.uploadText}>Drag & drop your PDF here</p>
                 <p className={styles.uploadSubtext}>or click to browse</p>
-                <p className={styles.fileHint}>Supported format: PDF (Max 50MB)</p>
+                <p className={styles.fileHint}>Supported format: PDF & Images (Max 50MB)</p>
               </div>
             ) : (
               <div className={styles.filePreview}>
