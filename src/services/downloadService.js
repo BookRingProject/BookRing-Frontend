@@ -10,6 +10,7 @@ export const downloadFile = async (url, filename) => {
           method: 'GET',
           headers: { 'Cache-Control': 'no-cache' },
         });
+        
 
         // --- THIS IS IMPORTANT: Check if Cloudinary blocked the file ---
         if (!response.ok) {
