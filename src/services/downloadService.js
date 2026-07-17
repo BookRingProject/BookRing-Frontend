@@ -88,5 +88,11 @@ export const generateFilename = (title, extension) => {
   return `${cleanTitle || 'download'}.${extension}`;
 };
 
+// 
+export const generateImageFilename = (title) => {
+  // Determine extension from URL or default to jpg
+  return generateFilename(title, 'jpg');
+};
+
 export const generatePdfFilename = (title) => generateFilename(title, 'pdf');
 export const generateAudioFilename = (title) => generateFilename(title, 'mp3');
