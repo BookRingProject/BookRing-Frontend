@@ -6,7 +6,7 @@ import SummaryIcon from '../icons/SummaryIcon';
 import AudioIcon from '../icons/AudioIcon';
 import DownloadIcon from '../icons/DownloadIcon';
 import DeleteIcon from '../icons/DeleteIcon';
-import { downloadFile, generatePdfFilename, generateAudioFilename } from '../../services/downloadService';
+import { downloadFile, generatePdfFilename, generateAudioFilename, generateImageFilename } from '../../services/downloadService';
 import { getPdfThumbnail } from '../../utils/cloudinary';
 import styles from './BookContentCard.module.css';
 
@@ -79,11 +79,20 @@ const BookContentCard = ({ book, type, onDelete }) => {
   const getFileInfo = () => {
     switch (type) {
       case 'original':
-        return { 
-          url: book.pdfUrl, 
-          filename: generatePdfFilename(book.title), 
-          label: 'Download PDF' 
-        };
+        // ✅ FIX: Check if it's an image or PDF
+        if (book.isImageBased) {
+          return { 
+            url: book.pdfUrl, 
+            filename: generateImageFilename(book.title), 
+            label: 'Download Image' 
+          };
+        } else {
+          return { 
+            url: book.pdfUrl, 
+            filename: generatePdfFilename(book.title), 
+            label: 'Download PDF' 
+          };
+        }
       case 'summary':
         return { 
           url: book.summaryPdfUrl || '#', 
