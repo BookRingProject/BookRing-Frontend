@@ -43,7 +43,7 @@ const Chatbot = ({
         {
           id: 'welcome',
           type: 'bot',
-          content: "Hi there! I'm BRbot 👋\n\nI can help you study your books. Just tell me which book you want to discuss, and I'll analyze it for you.\n\nTry saying something like:\n- 'Summarize my Machine Learning book'\n- 'What are the key concepts in my Physics book?'\n- 'Explain chapter 3 of my Biology book'",
+          content: "Hi there! I'm BRbot 👋\n\nI can help you study your books. Just tell me which book you want to discuss, and I'll analyze it for you.,
           timestamp: new Date().toISOString(),
         },
       ]);
