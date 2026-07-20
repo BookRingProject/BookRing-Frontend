@@ -54,9 +54,6 @@
   }
 }
 
-
-
-
 /* Chat Float Button */
 .chatFloat {
   position: fixed;
@@ -65,7 +62,7 @@
   z-index: 1000;
 }
 
-/* Chat Overlay */
+/* Chat Overlay - Desktop */
 .chatOverlay {
   position: fixed;
   bottom: 100px;
@@ -95,7 +92,7 @@
   }
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - Tablet */
 @media (max-width: 768px) {
   .chatFloat {
     bottom: 20px;
@@ -103,19 +100,42 @@
   }
 
   .chatOverlay {
-    bottom: 80px;
-    right: 10px;
-    left: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    animation: slideUpMobile 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
   }
 
   .chatWindow {
     width: 100%;
     max-width: 100%;
-    max-height: 80vh;
-    border-radius: 12px;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.15);
+    animation: slideUpMobile 0.3s ease;
   }
 }
 
+/* Mobile slide-up animation */
+@keyframes slideUpMobile {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small phones */
 @media (max-width: 480px) {
   .chatFloat {
     bottom: 16px;
@@ -123,13 +143,11 @@
   }
 
   .chatOverlay {
-    bottom: 72px;
-    right: 8px;
-    left: 8px;
+    align-items: flex-end;
   }
 
   .chatWindow {
-    max-height: 70vh;
-    border-radius: 10px;
+    max-height: 90vh;
+    border-radius: 12px 12px 0 0;
   }
 }
