@@ -30,8 +30,10 @@
   transform: scale(0.92);
 }
 
+/* FIXED: Active state (chat open) */
 .toggleButton.active {
   background-color: var(--bg-secondary, #1f2937);
+  border: 2px solid var(--border-color, #d1d5db); /* ← NEW: Border for light mode */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
@@ -40,7 +42,7 @@
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* NEW: Icon styles - ensures visibility in both themes */
+/* FIXED: Icon styles - adapt to theme */
 .closeIcon,
 .chatIcon {
   font-size: 28px;
@@ -48,11 +50,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: white; /* Default: white on green */
 }
 
+/* FIXED: When chat is open (active state), X adapts to theme */
 .toggleButton.active .closeIcon {
-  color: white;
+  color: var(--text-primary, #1f2937); /* Black in light mode, white in dark */
 }
 
 /* Notification Badge */
