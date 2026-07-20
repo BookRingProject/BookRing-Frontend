@@ -1,3 +1,8 @@
+/**
+ * Chatbot Component Styles - BRbot Main Interface
+ * MIT License
+ */
+
 .chatbotContainer {
   display: flex;
   flex-direction: column;
@@ -60,12 +65,11 @@
   gap: 8px;
 }
 
-/* FIXED: X button now adapts to theme */
 .clearBtn,
 .closeBtn {
   background: none;
   border: none;
-  color: var(--close-btn-color, #ffffff);
+  color: white;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 6px;
