@@ -83,19 +83,220 @@
   margin-bottom: 4px;
 }
 
-/* Message Content */
+/* Message Content - Markdown Styles */
 .messageContent {
   font-size: 14px;
   line-height: 1.6;
   white-space: pre-wrap;
 }
 
+/* Headings */
+.messageContent h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 12px 0 6px 0;
+}
+
+.messageContent h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0 4px 0;
+}
+
+.messageContent h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 4px 0;
+}
+
+.messageContent h4,
+.messageContent h5,
+.messageContent h6 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 6px 0 4px 0;
+}
+
+.messageContent h1:first-child,
+.messageContent h2:first-child,
+.messageContent h3:first-child,
+.messageContent h4:first-child {
+  margin-top: 0;
+}
+
+/* Paragraphs */
 .messageContent p {
   margin: 0 0 6px 0;
 }
 
 .messageContent p:last-child {
   margin-bottom: 0;
+}
+
+/* Lists */
+.messageContent ul,
+.messageContent ol {
+  margin: 6px 0 8px 0;
+  padding-left: 24px;
+}
+
+.messageContent li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.messageContent li:last-child {
+  margin-bottom: 0;
+}
+
+/* Bold & Strong */
+.messageContent strong,
+.messageContent b {
+  font-weight: 700;
+}
+
+/* Italic & Emphasis */
+.messageContent em,
+.messageContent i {
+  font-style: italic;
+}
+
+/* Blockquotes */
+.messageContent blockquote {
+  border-left: 3px solid var(--green-primary, #22c55e);
+  padding-left: 12px;
+  margin: 8px 0;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* Inline Code */
+.messageContent code {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+/* Code Blocks */
+.messageContent pre {
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 10px 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.messageContent pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+}
+
+/* Horizontal Rule */
+.messageContent hr {
+  border: none;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  margin: 12px 0;
+}
+
+/* Links */
+.messageContent a {
+  color: var(--green-primary, #22c55e);
+  text-decoration: underline;
+}
+
+.messageContent a:hover {
+  text-decoration: none;
+}
+
+/* Tables (for GFM) */
+.messageContent table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.messageContent th,
+.messageContent td {
+  border: 1px solid var(--border-color, #e5e7eb);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.messageContent th {
+  background-color: var(--bg-tertiary, #f3f4f6);
+  font-weight: 600;
+}
+
+.messageContent tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Strikethrough */
+.messageContent del,
+.messageContent s {
+  text-decoration: line-through;
+}
+
+/* User bubble overrides (white text on green background) */
+.userBubble .messageContent h1,
+.userBubble .messageContent h2,
+.userBubble .messageContent h3,
+.userBubble .messageContent h4,
+.userBubble .messageContent h5,
+.userBubble .messageContent h6,
+.userBubble .messageContent strong,
+.userBubble .messageContent b,
+.userBubble .messageContent em,
+.userBubble .messageContent i,
+.userBubble .messageContent p,
+.userBubble .messageContent li,
+.userBubble .messageContent blockquote,
+.userBubble .messageContent code {
+  color: white;
+}
+
+.userBubble .messageContent blockquote {
+  border-left-color: rgba(255, 255, 255, 0.4);
+}
+
+.userBubble .messageContent code {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.userBubble .messageContent pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userBubble .messageContent pre code {
+  color: white;
+}
+
+.userBubble .messageContent hr {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.userBubble .messageContent a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.userBubble .messageContent th,
+.userBubble .messageContent td {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.userBubble .messageContent th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userBubble .messageContent tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Timestamp */
@@ -124,6 +325,23 @@
 
   .messageContent {
     font-size: 13px;
+  }
+
+  .messageContent h1 {
+    font-size: 18px;
+  }
+
+  .messageContent h2 {
+    font-size: 16px;
+  }
+
+  .messageContent h3 {
+    font-size: 15px;
+  }
+
+  .messageContent ul,
+  .messageContent ol {
+    padding-left: 18px;
   }
 
   .avatar {
