@@ -10,6 +10,8 @@ import { useBooks } from '../../../hooks/useBooks';
 import { useLecturers } from '../../../hooks/useLecturers';
 import { useSaves } from '../../../hooks/useSaves';
 import Loader from '../../../components/common/Loader';
+import ChatToggle from '../../../components/chat/ChatToggle';
+import Chatbot from '../../../components/chat/Chatbot';
 import styles from './page.module.css';
 
 export default function BookspherePage() {
@@ -24,6 +26,7 @@ export default function BookspherePage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedLecturer, setSelectedLecturer] = useState(lecturerId);
   const [currentBooks, setCurrentBooks] = useState([]);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     loadInitialData();
@@ -45,7 +48,7 @@ export default function BookspherePage() {
       getAllLecturers(),
       getTrendingBooks(),
       loadSavedBooks(),
-      getFollowingLecturers()  // Load initial following state
+      getFollowingLecturers()
     ]);
   };
 
@@ -89,7 +92,6 @@ export default function BookspherePage() {
     } else {
       await followLecturer(lecturerId);
     }
-    // Refresh both the lecturers list and the following state
     await getAllLecturers();
     await getFollowingLecturers();
   };
@@ -98,6 +100,10 @@ export default function BookspherePage() {
     await toggleSave(bookId, savedBookIds.includes(bookId));
     await loadSavedBooks();
     await getAllBooks();
+  };
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
   };
 
   if (booksLoading && lecturersLoading) {
@@ -154,6 +160,26 @@ export default function BookspherePage() {
 
       {activeView === 'trendy' && (
         <TrendyRanking books={trendingBooks} />
+      )}
+
+      {/* Chat Toggle Button - Floating */}
+      <div className={styles.chatFloat}>
+        <ChatToggle 
+          isOpen={isChatOpen} 
+          onToggle={toggleChat} 
+        />
+      </div>
+
+      {/* Chat Window - Overlay */}
+      {isChatOpen && (
+        <div className={styles.chatOverlay}>
+          <div className={styles.chatWindow}>
+            <Chatbot 
+              isOpen={isChatOpen} 
+              onClose={toggleChat} 
+            />
+          </div>
+        </div>
       )}
     </div>
   );
