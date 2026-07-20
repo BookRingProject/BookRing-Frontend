@@ -30,19 +30,29 @@
   transform: scale(0.92);
 }
 
-/* FIXED: Active state (chat open) */
+/* Active state (chat open) - light mode default */
 .toggleButton.active {
-  background-color: var(--bg-secondary, #1f2937);
-  border: 2px solid var(--border-color, #d1d5db); /* ← NEW: Border for light mode */
+  background-color: #ffffff; /* White circle in light mode */
+  border: 2px solid #dddddd; /* Visible border in light mode */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .toggleButton.active:hover {
-  background-color: var(--bg-tertiary, #374151);
+  background-color: #f5f5f5;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* FIXED: Icon styles - adapt to theme */
+/* Dark mode override for active state */
+[data-theme="dark"] .toggleButton.active {
+  background-color: #1e1e1e; /* Dark circle in dark mode */
+  border: 2px solid #333333;
+}
+
+[data-theme="dark"] .toggleButton.active:hover {
+  background-color: #2d2d2d;
+}
+
+/* Icon styles */
 .closeIcon,
 .chatIcon {
   font-size: 28px;
@@ -50,12 +60,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white; /* Default: white on green */
+  color: white; /* White on green when closed */
 }
 
-/* FIXED: When chat is open (active state), X adapts to theme */
+/* X icon - black in light mode */
 .toggleButton.active .closeIcon {
-  color: var(--text-primary, #1f2937); /* Black in light mode, white in dark */
+  color: #000000; /* Black in light mode */
+}
+
+/* X icon - white in dark mode */
+[data-theme="dark"] .toggleButton.active .closeIcon {
+  color: #ffffff; /* White in dark mode */
 }
 
 /* Notification Badge */
