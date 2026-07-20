@@ -54,7 +54,7 @@
   }
 }
 
-/* Chat Float Button */
+/* Chat Float Button - Desktop */
 .chatFloat {
   position: fixed;
   bottom: 30px;
@@ -92,13 +92,17 @@
   }
 }
 
-/* Mobile Responsive - Tablet */
+/* Mobile Responsive - Tablet and below */
 @media (max-width: 768px) {
+  /* Chat button positioned above footer */
   .chatFloat {
-    bottom: 20px;
+    position: fixed;
+    bottom: 80px; /* Above footer */
     right: 20px;
+    z-index: 1000;
   }
 
+  /* Chat overlay - full screen bottom sheet */
   .chatOverlay {
     position: fixed;
     top: 0;
@@ -107,7 +111,7 @@
     bottom: 0;
     z-index: 999;
     animation: slideUpMobile 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -137,8 +141,9 @@
 
 /* Small phones */
 @media (max-width: 480px) {
+  /* Chat button positioned higher on small phones */
   .chatFloat {
-    bottom: 16px;
+    bottom: 70px; /* Above footer */
     right: 16px;
   }
 
