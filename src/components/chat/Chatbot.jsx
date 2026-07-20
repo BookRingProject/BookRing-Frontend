@@ -43,7 +43,7 @@ const Chatbot = ({
         {
           id: 'welcome',
           type: 'bot',
-          content: "Hi there! I'm BRbot 👋\n\nI can help you study your books. Just tell me which book you want to discuss, and I'll analyze it for you.,
+          content: "Hi there! I'm BRbot 👋\n\nI can help you study your books. Just tell me which book you want to discuss, and I'll analyze it for you."
           timestamp: new Date().toISOString(),
         },
       ]);
