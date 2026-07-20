@@ -69,7 +69,7 @@
 .closeBtn {
   background: none;
   border: none;
-  color: white;
+  color: var(--close-btn-color, #ffffff);
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 6px;
