@@ -162,8 +162,8 @@ export default function BookspherePage() {
         <TrendyRanking books={trendingBooks} />
       )}
 
-      {/* Chat Toggle Button - Floating */}
-      <div className={styles.chatFloat}>
+      {/* Chat Toggle Button - Floating - Hidden when chat is open on mobile */}
+      <div className={`${styles.chatFloat} ${isChatOpen ? styles.chatHidden : ''}`}>
         <ChatToggle 
           isOpen={isChatOpen} 
           onToggle={toggleChat} 
