@@ -89,7 +89,7 @@
   top: 50%;
   transform: translateY(-50%);
   background-color: var(--bg-secondary, #1f2937);
-  color: white;
+  color: var(--text-primary, #ffffff);
   padding: 8px 14px;
   border-radius: 8px;
   font-size: 13px;
