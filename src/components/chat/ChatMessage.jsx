@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from './ChatMessage.module.css';
 
-
 const ChatMessage = ({ message }) => {
   const { type, content, timestamp, bookFound, bookTitle, isError } = message;
 
