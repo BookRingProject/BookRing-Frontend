@@ -1,0 +1,138 @@
+.messageWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.userWrapper {
+  flex-direction: row-reverse;
+}
+
+.botWrapper {
+  flex-direction: row;
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background-color: var(--bg-tertiary, #f3f4f6);
+}
+
+.userWrapper .avatar {
+  background-color: var(--green-primary, #22c55e);
+}
+
+.botWrapper .avatar {
+  background-color: var(--bg-tertiary, #f3f4f6);
+}
+
+/* Message Bubble */
+.messageBubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.userBubble {
+  background-color: var(--green-primary, #22c55e);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.botBubble {
+  background-color: var(--bg-tertiary, #f3f4f6);
+  color: var(--text-primary, #111827);
+  border-bottom-left-radius: 4px;
+}
+
+/* Book Context */
+.bookContext {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted, #6b7280);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.botBubble .bookContext {
+  color: var(--text-muted, #6b7280);
+}
+
+.userBubble .bookContext {
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Error Icon */
+.errorIcon {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Message Content */
+.messageContent {
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.messageContent p {
+  margin: 0 0 6px 0;
+}
+
+.messageContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Timestamp */
+.timestamp {
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.userTimestamp {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+}
+
+.botTimestamp {
+  color: var(--text-muted, #6b7280);
+  text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .messageBubble {
+    max-width: 90%;
+    padding: 8px 12px;
+  }
+
+  .messageContent {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .bookContext {
+    font-size: 10px;
+  }
+}
