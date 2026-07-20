@@ -40,16 +40,19 @@
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
-.toggleButton svg {
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform 0.3s ease;
+/* NEW: Icon styles - ensures visibility in both themes */
+.closeIcon,
+.chatIcon {
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-.toggleButton.active svg {
-  transform: rotate(90deg);
+.toggleButton.active .closeIcon {
+  color: white;
 }
 
 /* Notification Badge */
@@ -130,9 +133,9 @@
     height: 56px;
   }
 
-  .toggleButton svg {
-    width: 24px;
-    height: 24px;
+  .closeIcon,
+  .chatIcon {
+    font-size: 24px;
   }
 
   .badge {
@@ -156,9 +159,9 @@
     height: 50px;
   }
 
-  .toggleButton svg {
-    width: 22px;
-    height: 22px;
+  .closeIcon,
+  .chatIcon {
+    font-size: 22px;
   }
 
   .badge {
@@ -170,6 +173,6 @@
   }
 
   .tooltip {
-    display: none; /* Hide tooltip on very small screens */
+    display: none;
   }
 }
